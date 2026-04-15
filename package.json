@@ -1,0 +1,46 @@
+{
+  "name": "happy-terminal-commands",
+  "displayName": "Happy Terminal Commands",
+  "description": "Adds Command Palette commands that open a terminal and run happy CLI workflows for Claude and Codex.",
+  "version": "0.1.0",
+  "publisher": "yourname",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_ID/happy-terminal-commands"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "terminal",
+    "cli",
+    "claude",
+    "codex",
+    "happy"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "happy.runClaude",
+        "title": "Happy: Claude Run"
+      },
+      {
+        "command": "happy.continueClaude",
+        "title": "Happy: Claude Continue"
+      },
+      {
+        "command": "happy.runCodex",
+        "title": "Happy: Codex Run"
+      },
+      {
+        "command": "happy.continueCodex",
+        "title": "Happy: Codex Continue"
+      }
+    ]
+  }
+}
