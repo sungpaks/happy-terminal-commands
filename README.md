@@ -1,6 +1,6 @@
 # Happy Terminal Commands
 
-Command Palette commands for running `happy` CLI workflows in an integrated terminal.
+Command Palette commands for running `happy` CLI workflows in a terminal editor.
 
 > It is not an official extension of Happy, Claude or Codex. 
 
@@ -13,7 +13,7 @@ Command Palette commands for running `happy` CLI workflows in an integrated term
 
 ## What it does
 
-Each command opens or reuses an integrated terminal and runs one of these commands:
+Each command opens a new terminal editor beside the currently focused tab and runs one of these commands:
 
 - `happy claude`
 - `happy claude --continue`
@@ -28,7 +28,7 @@ You must have:
 
 - `happy` installed
 - the command available in your shell `PATH`
-- a shell environment where `zsh -lc` can resolve `happy`
+- a default terminal shell where `happy` can be resolved from `PATH`
 
 ## Usage
 
@@ -38,4 +38,4 @@ You must have:
 
 ## Notes
 
-If the `happy` command is not found, verify your shell PATH and CLI installation.
+If the `happy` command is not found, verify your terminal shell PATH and CLI installation.

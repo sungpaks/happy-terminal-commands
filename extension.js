@@ -4,40 +4,33 @@ const vscode = require("vscode");
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-  /** @type {vscode.Terminal | undefined} */
-  let terminal;
+  function runInTerminal(name, command) {
+    const terminal = vscode.window.createTerminal({
+      name,
+      location: {
+        viewColumn: vscode.ViewColumn.Beside
+      }
+    });
 
-  function getTerminal() {
-    if (!terminal || terminal.exitStatus !== undefined) {
-      terminal = vscode.window.createTerminal({
-        name: "Happy Commands"
-      });
-    }
-
-    terminal.show(true);
-    return terminal;
-  }
-
-  function runInTerminal(command) {
-    const terminal = getTerminal();
-    terminal.sendText(`zsh -lc '${command}'`, true);
+    terminal.show(false);
+    terminal.sendText(command, true);
   }
 
   const commands = [
     vscode.commands.registerCommand("happy.runClaude", () => {
-      runInTerminal("happy claude");
+      runInTerminal("Happy Claude", "happy claude");
     }),
 
     vscode.commands.registerCommand("happy.continueClaude", () => {
-      runInTerminal("happy claude --continue");
+      runInTerminal("Happy Claude Continue", "happy claude --continue");
     }),
 
     vscode.commands.registerCommand("happy.runCodex", () => {
-      runInTerminal("happy codex");
+      runInTerminal("Happy Codex", "happy codex");
     }),
 
     vscode.commands.registerCommand("happy.continueCodex", () => {
-      runInTerminal("happy codex --continue");
+      runInTerminal("Happy Codex Continue", "happy codex --continue");
     })
   ];
 
